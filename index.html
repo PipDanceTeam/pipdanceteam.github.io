@@ -3,17 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PipDance - Professional Prop Trading</title>
+<title>PipDance LLC - Professional Prop Trading</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
 <style>
-/* --- Reset --- */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Roboto',sans-serif;color:#fff;background:#0b0c1a;scroll-behavior:smooth;overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
 section{padding:100px 50px;max-width:1200px;margin:0 auto;position:relative;}
 h3{font-family:'Montserrat',sans-serif;font-size:36px;margin-bottom:50px;text-align:center;}
-
-/* --- Header --- */
 header{
     width:100%;position:fixed;top:0;left:0;z-index:1000;
     background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);
@@ -24,14 +21,13 @@ header h1{font-family:'Montserrat',sans-serif;font-size:28px;}
 nav a{margin-left:25px;font-weight:600;transition:0.3s;}
 nav a:hover{color:#ffd700;}
 
-/* --- Hero Section --- */
+/* --- Hero with K-line/Trading background --- */
 .hero{
-    height:100vh;
-    display:flex;justify-content:center;align-items:center;text-align:center;
-    color:#fff;
-    position:relative;overflow:hidden;
-    background: linear-gradient(rgba(10,10,20,0.7), rgba(10,10,20,0.7)),
-                url('https://images.unsplash.com/photo-1612832021120-7f618d217849?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;
+    color:#fff;position:relative;overflow:hidden;
+    background: linear-gradient(rgba(10,10,20,0.6), rgba(10,10,20,0.6)),
+                url('https://images.unsplash.com/photo-1612381188220-60eeb9d14b05?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    background-size:cover;
 }
 .hero canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;}
 .hero .hero-content{position:relative;z-index:1;}
@@ -70,10 +66,10 @@ transition:transform 0.4s,box-shadow 0.4s;opacity:0;transform:translateY(30px);}
 .member p{font-size:16px;color:#ddd;}
 .member:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 15px 40px rgba(0,0,0,0.5);}
 
-/* --- Testimonials --- */
+/* --- Testimonials with flags --- */
 .testimonials{position:relative;overflow:hidden;max-width:1000px;margin:0 auto;}
 .testimonial{text-align:center;padding:40px 20px;background:rgba(255,255,255,0.05);border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.3);margin:10px;opacity:0;transform:translateY(30px);}
-.testimonial p{font-size:18px;color:#ddd;margin-bottom:15px;}
+.testimonial p{font-size:18px;color:#ddd;margin-bottom:10px;}
 .testimonial h4{font-size:20px;color:#ffd700;}
 
 /* --- Contact Form --- */
@@ -89,187 +85,145 @@ footer{text-align:center;padding:50px 20px;background:#0a0a14;color:#fff;}
 @keyframes fadeInUp{to{opacity:1;transform:translateY(0);}}
 
 @media(max-width:768px){
-    header{flex-direction:column;align-items:flex-start;}
-    nav{margin-top:10px;}
-    .hero h2{font-size:36px;}
-    .hero p{font-size:18px;}
+header{flex-direction:column;align-items:flex-start;}
+nav{margin-top:10px;}
+.hero h2{font-size:36px;}
+.hero p{font-size:18px;}
 }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>PipDance</h1>
-    <nav>
-        <a href="#services">Services</a>
-        <a href="#stats">Stats</a>
-        <a href="#team">Team</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<h1>PipDance LLC</h1>
+<nav>
+<a href="#services">Services</a>
+<a href="#stats">Stats</a>
+<a href="#team">Team</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
 <!-- Hero -->
 <section class="hero">
-    <canvas id="heroCanvas"></canvas>
-    <div class="hero-content">
-        <h2>Professional Prop Trading Solutions</h2>
-        <p>Empowering traders with capital, technology, and mentorship for success.</p>
-        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
-    </div>
+<canvas id="heroCanvas"></canvas>
+<div class="hero-content">
+<h2>Professional Prop Trading Solutions</h2>
+<p>Empowering traders with capital, technology, and mentorship for success.</p>
+<button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+</div>
 </section>
 
 <!-- Services -->
 <section id="services">
-    <h3>Our Services</h3>
-    <div class="cards">
-        <div class="card"><h4>Trading Capital</h4><p>Access significant trading capital and grow with our performance programs.</p></div>
-        <div class="card"><h4>Risk Management</h4><p>Professional strategies to manage and mitigate trading risks effectively.</p></div>
-        <div class="card"><h4>Mentorship</h4><p>Learn from experienced traders and accelerate your trading career.</p></div>
-    </div>
+<h3>Our Services</h3>
+<div class="cards">
+<div class="card"><h4>Trading Capital</h4><p>Access significant trading capital and grow with our performance programs.</p></div>
+<div class="card"><h4>Risk Management</h4><p>Professional strategies to manage and mitigate trading risks effectively.</p></div>
+<div class="card"><h4>Mentorship</h4><p>Learn from experienced traders and accelerate your trading career.</p></div>
+</div>
 </section>
 
 <!-- Stats -->
 <section id="stats">
-    <h3>Our Achievements</h3>
-    <div class="stats">
-        <div class="stat"><h4 class="num" data-target="5000000">0</h4><p>Capital Deployed ($)</p></div>
-        <div class="stat"><h4 class="num" data-target="1500">0</h4><p>Traders Supported</p></div>
-        <div class="stat"><h4 class="num" data-target="98">0</h4><p>% Success Rate</p></div>
-    </div>
+<h3>Our Achievements</h3>
+<div class="stats">
+<div class="stat"><h4 class="num" data-target="5000000">0</h4><p>Capital Deployed ($)</p></div>
+<div class="stat"><h4 class="num" data-target="1500">0</h4><p>Traders Supported</p></div>
+<div class="stat"><h4 class="num" data-target="98">0</h4><p>% Success Rate</p></div>
+</div>
 </section>
 
 <!-- Team -->
 <section id="team">
-    <h3>Meet Our Team</h3>
-    <div class="team">
-        <div class="member"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt=""><h4>John Doe</h4><p>Founder & CEO</p></div>
-        <div class="member"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt=""><h4>Jane Smith</h4><p>Head of Trading</p></div>
-        <div class="member"><img src="https://randomuser.me/api/portraits/men/45.jpg" alt=""><h4>Mike Brown</h4><p>Lead Analyst</p></div>
-    </div>
+<h3>Meet Our Team</h3>
+<div class="team">
+<div class="member"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt=""><h4>John Doe</h4><p>Founder & CEO</p></div>
+<div class="member"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt=""><h4>Jane Smith</h4><p>Head of Trading</p></div>
+<div class="member"><img src="https://randomuser.me/api/portraits/men/45.jpg" alt=""><h4>Mike Brown</h4><p>Lead Analyst</p></div>
+</div>
 </section>
 
 <!-- Testimonials -->
 <section id="testimonials">
-    <h3>Client Testimonials</h3>
-    <div class="testimonials">
-        <div class="testimonial"><p>"PipDance has transformed my trading career!"</p><h4>- Trader A</h4></div>
-        <div class="testimonial"><p>"Exceptional support and capital access."</p><h4>- Trader B</h4></div>
-        <div class="testimonial"><p>"Professional, reliable, and innovative."</p><h4>- Trader C</h4></div>
-    </div>
+<h3>Client Testimonials</h3>
+<div class="testimonials">
+<div class="testimonial"><p>"PipDance LLC provided the capital and guidance I needed to achieve my trading goals. Highly recommended!"</p><h4>Emma Wilson 🇺🇸</h4></div>
+<div class="testimonial"><p>"Exceptional platform and mentorship. I doubled my account in 3 months!"</p><h4>Liam Chen 🇨🇳</h4></div>
+<div class="testimonial"><p>"Professional and reliable trading support, exactly what I was looking for."</p><h4>Sophia Müller 🇩🇪</h4></div>
+<div class="testimonial"><p>"Thanks to PipDance LLC, I finally reached consistency in my trading performance."</p><h4>Oliver Smith 🇬🇧</h4></div>
+</div>
 </section>
 
 <!-- Contact -->
 <section id="contact">
-    <h3>Contact Us</h3>
-    <form class="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="6" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
+<h3>Contact Us</h3>
+<form class="contact-form">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="6" placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
 </section>
 
 <footer>
-    &copy; 2026 PipDance. All rights reserved.
+&copy; 2026 PipDance LLC. All rights reserved.
 </footer>
 
-<!-- Scripts -->
 <script>
-// Smooth nav scrolling
+// Smooth scrolling
 document.querySelectorAll('nav a').forEach(a=>{
-    a.addEventListener('click', e=>{
-        e.preventDefault();
-        document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-    });
+a.addEventListener('click', e=>{
+e.preventDefault();
+document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+});
 });
 
 // Fade in on scroll
-const faders = document.querySelectorAll('.card, .stat, .member, .contact-form, .testimonial');
-const observer = new IntersectionObserver((entries, observer)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.style.animation = 'fadeInUp 0.8s forwards';
-            observer.unobserve(entry.target);
-        }
-    });
+const faders=document.querySelectorAll('.card,.stat,.member,.contact-form,.testimonial');
+const observer=new IntersectionObserver((entries,observer)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.style.animation='fadeInUp 0.8s forwards';observer.unobserve(entry.target);}
+});
 },{threshold:0.1});
 faders.forEach(fader=>observer.observe(fader));
 
-// Animated stats
-const counters = document.querySelectorAll('.num');
+// Counters
+const counters=document.querySelectorAll('.num');
 counters.forEach(counter=>{
-    counter.innerText='0';
-    const updateCounter=()=>{
-        const target=+counter.getAttribute('data-target');
-        const c=+counter.innerText.replace(/,/g,'');
-        const increment=target/200;
-        if(c<target){
-            counter.innerText=`${Math.ceil(c+increment)}`;
-            setTimeout(updateCounter,10);
-        }else counter.innerText=target.toLocaleString();
-    };
-    const obs = new IntersectionObserver(entries=>{
-        if(entries[0].isIntersecting) updateCounter();
-    }, {threshold:0.5});
-    obs.observe(counter);
+counter.innerText='0';
+const updateCounter=()=>{
+const target=+counter.getAttribute('data-target');
+const c=+counter.innerText.replace(/,/g,'');
+const increment=target/200;
+if(c<target){counter.innerText=`${Math.ceil(c+increment)}`;setTimeout(updateCounter,10);}
+else counter.innerText=target.toLocaleString();
+};
+const obs=new IntersectionObserver(entries=>{if(entries[0].isIntersecting) updateCounter();},{threshold:0.5});
+obs.observe(counter);
 });
 
 // Testimonials carousel
 let current=0;
 const testimonials=document.querySelectorAll('.testimonial');
-function showTestimonial(index){
-    testimonials.forEach((t,i)=>t.style.display='none');
-    testimonials[index].style.display='block';
-}
+function showTestimonial(index){testimonials.forEach((t,i)=>t.style.display='none');testimonials[index].style.display='block';}
 showTestimonial(current);
-setInterval(()=>{
-    current=(current+1)%testimonials.length;
-    showTestimonial(current);
-},5000);
+setInterval(()=>{current=(current+1)%testimonials.length;showTestimonial(current);},5000);
 
-// Contact form alert
-const form=document.querySelector('.contact-form');
-form.addEventListener('submit', e=>{
-    e.preventDefault();
-    alert('Thank you! Your message has been sent.');
-    form.reset();
-});
+// Contact alert
+document.querySelector('.contact-form').addEventListener('submit',e=>{e.preventDefault();alert('Thank you! Your message has been sent.');e.target.reset();});
 
 // Hero Particles
 const canvas=document.getElementById('heroCanvas');
 const ctx=canvas.getContext('2d');
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
+canvas.width=window.innerWidth;canvas.height=window.innerHeight;
 let particles=[];
-for(let i=0;i<100;i++){
-    particles.push({
-        x:Math.random()*canvas.width,
-        y:Math.random()*canvas.height,
-        r:Math.random()*2+1,
-        dx:(Math.random()-0.5)*0.5,
-        dy:(Math.random()-0.5)*0.5
-    });
-}
-function animateParticles(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(p=>{
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle='rgba(255,255,255,0.6)';
-        ctx.fill();
-        p.x+=p.dx;
-        p.y+=p.dy;
-        if(p.x>canvas.width||p.x<0)p.dx*=-1;
-        if(p.y>canvas.height||p.y<0)p.dy*=-1;
-    });
-    requestAnimationFrame(animateParticles);
-}
+for(let i=0;i<120;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2+1,dx:(Math.random()-0.5)*0.5,dy:(Math.random()-0.5)*0.5});}
+function animateParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,0.6)';ctx.fill();p.x+=p.dx;p.y+=p.dy;if(p.x>canvas.width||p.x<0)p.dx*=-1;if(p.y>canvas.height||p.y<0)p.dy*=-1;});requestAnimationFrame(animateParticles);}
 animateParticles();
-window.addEventListener('resize',()=>{
-    canvas.width=window.innerWidth;
-    canvas.height=window.innerHeight;
-});
+window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
 </script>
+
 </body>
 </html>
