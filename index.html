@@ -1,228 +1,1306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PipDance LLC - Professional Prop Trading</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>PipDance | Funded Trading Accounts & Prop Firm Solutions</title>
+
+<meta name="description"
+content="PipDance LLC provides funded trading accounts, prop firm challenges, advanced risk management, and institutional-grade trading solutions for global traders." />
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Roboto',sans-serif;color:#fff;background:#0b0c1a;scroll-behavior:smooth;overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-section{padding:100px 50px;max-width:1200px;margin:0 auto;position:relative;}
-h3{font-family:'Montserrat',sans-serif;font-size:36px;margin-bottom:50px;text-align:center;}
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Roboto',sans-serif;
+    background:#070b16;
+    color:#fff;
+    overflow-x:hidden;
+    position:relative;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+section{
+    padding:100px 40px;
+    max-width:1300px;
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+h1,h2,h3,h4{
+    font-family:'Montserrat',sans-serif;
+}
+
+/* ================= BACKGROUND GLOW ================= */
+
+body::before{
+    content:'';
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#ffd70022 0%,transparent 70%);
+    top:-250px;
+    right:-250px;
+    z-index:0;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle,#2563eb22 0%,transparent 70%);
+    bottom:-250px;
+    left:-250px;
+    z-index:0;
+}
+
+/* ================= HEADER ================= */
+
 header{
-    width:100%;position:fixed;top:0;left:0;z-index:1000;
-    background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);
-    display:flex;justify-content:space-between;align-items:center;
-    padding:20px 50px;color:#fff;
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:999;
+    padding:22px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.55);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    transition:0.3s;
 }
-header h1{font-family:'Montserrat',sans-serif;font-size:28px;}
-nav a{margin-left:25px;font-weight:600;transition:0.3s;}
-nav a:hover{color:#ffd700;}
 
-/* --- Hero with K-line/Trading background --- */
+.logo{
+    font-size:30px;
+    font-weight:800;
+    color:#fff;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    color:#fff;
+    font-weight:600;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ffd700;
+}
+
+/* ================= HERO ================= */
+
 .hero{
-    height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;
-    color:#fff;position:relative;overflow:hidden;
-    background: linear-gradient(rgba(10,10,20,0.6), rgba(10,10,20,0.6)),
-                url('https://images.unsplash.com/photo-1612381188220-60eeb9d14b05?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-    background-size:cover;
+    height:100vh;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.75)),
+    url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
 }
-.hero canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;}
-.hero .hero-content{position:relative;z-index:1;}
-.hero h2{font-size:56px;margin-bottom:20px;opacity:0;transform:translateY(30px);animation:fadeInUp 1s forwards 0.5s;}
-.hero p{font-size:22px;margin-bottom:30px;opacity:0;transform:translateY(30px);animation:fadeInUp 1s forwards 1s;}
-.hero button{
-    padding:15px 50px;font-size:20px;border:none;border-radius:50px;background:#ffd700;color:#0b0c1a;cursor:pointer;
-    transition:0.4s;opacity:0;transform:translateY(30px);animation:fadeInUp 1s forwards 1.5s;position:relative;overflow:hidden;
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top right,rgba(255,215,0,0.15),transparent 35%),
+    radial-gradient(circle at bottom left,rgba(37,99,235,0.15),transparent 35%);
 }
-.hero button:hover{background:#ffb700;}
-.hero button::after{
-    content:"";position:absolute;top:50%;left:50%;width:300%;height:300%;background:rgba(255,255,255,0.2);border-radius:50%;
-    transform:translate(-50%,-50%) scale(0);transition:0.5s;
+
+.hero canvas{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
 }
-.hero button:hover::after{transform:translate(-50%,-50%) scale(1);}
 
-/* --- Cards --- */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
-.card{background:rgba(255,255,255,0.05);padding:30px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.3);
-transition:transform 0.4s,box-shadow 0.4s;opacity:0;transform:translateY(30px);}
-.card h4{font-size:24px;margin-bottom:15px;color:#ffd700;}
-.card p{font-size:16px;color:#ddd;}
-.card:hover{transform:translateY(-15px);box-shadow:0 15px 40px rgba(0,0,0,0.5);}
-
-/* --- Stats --- */
-.stats{display:flex;justify-content:space-around;flex-wrap:wrap;gap:30px;}
-.stat{background:rgba(255,255,255,0.05);padding:40px 20px;border-radius:15px;flex:1;min-width:180px;text-align:center;opacity:0;transform:translateY(30px);}
-.stat h4{font-size:40px;margin-bottom:10px;color:#ffd700;}
-.stat p{font-size:18px;color:#ddd;}
-
-/* --- Team --- */
-.team{display:flex;justify-content:space-around;flex-wrap:wrap;gap:30px;}
-.member{background:rgba(255,255,255,0.05);border-radius:15px;padding:20px;text-align:center;box-shadow:0 8px 25px rgba(0,0,0,0.3);opacity:0;transform:translateY(30px);}
-.member img{width:150px;height:150px;border-radius:50%;margin-bottom:15px;object-fit:cover;}
-.member h4{font-size:20px;margin-bottom:5px;color:#ffd700;}
-.member p{font-size:16px;color:#ddd;}
-.member:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 15px 40px rgba(0,0,0,0.5);}
-
-/* --- Testimonials with flags --- */
-.testimonials{position:relative;overflow:hidden;max-width:1000px;margin:0 auto;}
-.testimonial{text-align:center;padding:40px 20px;background:rgba(255,255,255,0.05);border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.3);margin:10px;opacity:0;transform:translateY(30px);}
-.testimonial p{font-size:18px;color:#ddd;margin-bottom:10px;}
-.testimonial h4{font-size:20px;color:#ffd700;}
-
-/* --- Contact Form --- */
-.contact-form{max-width:600px;margin:0 auto;opacity:0;transform:translateY(30px);}
-.contact-form input,.contact-form textarea{width:100%;padding:15px;margin-bottom:20px;border-radius:8px;border:1px solid #444;background:rgba(255,255,255,0.05);color:#fff;font-size:16px;}
-.contact-form button{padding:15px 30px;border:none;border-radius:50px;background:linear-gradient(90deg,#6a11cb,#2575fc);color:#fff;font-size:18px;cursor:pointer;transition:0.3s;}
-.contact-form button:hover{opacity:0.9;}
-
-/* --- Footer --- */
-footer{text-align:center;padding:50px 20px;background:#0a0a14;color:#fff;}
-
-/* --- Animations --- */
-@keyframes fadeInUp{to{opacity:1;transform:translateY(0);}}
-
-@media(max-width:768px){
-header{flex-direction:column;align-items:flex-start;}
-nav{margin-top:10px;}
-.hero h2{font-size:36px;}
-.hero p{font-size:18px;}
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    padding:20px;
+    animation:heroFade 1.4s ease forwards;
 }
+
+.hero-badge{
+    display:inline-block;
+    padding:10px 20px;
+    background:rgba(255,215,0,0.15);
+    border:1px solid rgba(255,215,0,0.35);
+    border-radius:999px;
+    color:#ffd700;
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    font-size:72px;
+    line-height:1.1;
+    margin-bottom:25px;
+    background:linear-gradient(to right,#fff,#ffd700);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    font-size:22px;
+    color:#ddd;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn{
+    position:relative;
+    overflow:hidden;
+    padding:16px 38px;
+    border:none;
+    border-radius:999px;
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+    transition:0.6s;
+}
+
+.btn:hover::before{
+    left:100%;
+}
+
+.btn-primary{
+    background:#ffd700;
+    color:#000;
+}
+
+.btn-primary:hover{
+    background:#ffbf00;
+    transform:translateY(-4px);
+}
+
+.btn-secondary{
+    background:rgba(255,255,255,0.08);
+    color:#fff;
+    border:1px solid rgba(255,255,255,0.15);
+}
+
+.btn-secondary:hover{
+    background:rgba(255,255,255,0.15);
+}
+
+/* ================= TITLES ================= */
+
+.section-title{
+    font-size:42px;
+    text-align:center;
+    margin-bottom:70px;
+    position:relative;
+}
+
+.section-title::after{
+    content:'';
+    width:120px;
+    height:4px;
+    background:linear-gradient(90deg,#ffd700,#ff9900);
+    position:absolute;
+    left:50%;
+    bottom:-18px;
+    transform:translateX(-50%);
+    border-radius:999px;
+}
+
+.gold{
+    color:#ffd700;
+}
+
+/* ================= TRUST ================= */
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+    margin-top:-60px;
+    position:relative;
+    z-index:3;
+}
+
+.trust-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:35px;
+    border-radius:24px;
+    backdrop-filter:blur(14px);
+    transition:0.4s;
+    overflow:hidden;
+    position:relative;
+}
+
+.trust-card::before{
+    content:'';
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:rgba(255,215,0,0.08);
+    border-radius:50%;
+    top:-50px;
+    right:-50px;
+}
+
+.trust-card:hover{
+    transform:translateY(-10px);
+    border-color:#ffd700;
+    box-shadow:0 20px 50px rgba(0,0,0,0.4);
+}
+
+.trust-card h4{
+    font-size:24px;
+    color:#ffd700;
+    margin-bottom:14px;
+}
+
+.trust-card p{
+    color:#ddd;
+    line-height:1.8;
+}
+
+/* ================= CARDS ================= */
+
+.cards,
+.funding-grid,
+.stats,
+.testimonials{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card,
+.funding-card,
+.stat,
+.testimonial,
+.faq-item,
+.contact-form,
+.contact-info{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:24px;
+    backdrop-filter:blur(14px);
+    transition:0.4s;
+}
+
+.card:hover,
+.funding-card:hover,
+.stat:hover,
+.testimonial:hover,
+.faq-item:hover{
+    transform:translateY(-10px);
+    border-color:#ffd700;
+    box-shadow:0 20px 50px rgba(0,0,0,0.45);
+}
+
+.card{
+    padding:35px;
+}
+
+.card h4{
+    font-size:26px;
+    margin-bottom:15px;
+    color:#ffd700;
+}
+
+.card p{
+    color:#ddd;
+    line-height:1.9;
+}
+
+/* ================= FUNDING ================= */
+
+.funding-card{
+    padding:45px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.funding-card::before{
+    content:'POPULAR';
+    position:absolute;
+    top:20px;
+    right:-35px;
+    background:#ffd700;
+    color:#000;
+    padding:8px 40px;
+    transform:rotate(45deg);
+    font-size:12px;
+    font-weight:700;
+}
+
+.funding-card:nth-child(1)::before{
+    display:none;
+}
+
+.funding-card:nth-child(3)::before{
+    content:'BEST VALUE';
+    background:#22c55e;
+    color:#fff;
+}
+
+.funding-card h4{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.price{
+    font-size:58px;
+    font-weight:800;
+    color:#ffd700;
+    margin-bottom:25px;
+    text-shadow:0 0 20px rgba(255,215,0,0.3);
+}
+
+.funding-card ul{
+    list-style:none;
+    margin-bottom:30px;
+}
+
+.funding-card li{
+    margin-bottom:15px;
+    color:#ddd;
+}
+
+/* ================= STATS ================= */
+
+.stat{
+    text-align:center;
+    padding:45px;
+}
+
+.stat h4{
+    font-size:54px;
+    color:#ffd700;
+    margin-bottom:12px;
+}
+
+.stat p{
+    color:#ddd;
+}
+
+/* ================= TESTIMONIALS ================= */
+
+.testimonial{
+    padding:35px;
+    position:relative;
+}
+
+.testimonial::before{
+    content:'★★★★★';
+    position:absolute;
+    top:20px;
+    right:25px;
+    color:#ffd700;
+    font-size:14px;
+}
+
+.testimonial p{
+    line-height:1.9;
+    color:#ddd;
+    margin-bottom:18px;
+}
+
+.testimonial h4{
+    color:#ffd700;
+}
+
+/* ================= FAQ ================= */
+
+.faq{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+    padding:30px;
+    margin-bottom:20px;
+}
+
+.faq-item h4{
+    color:#ffd700;
+    margin-bottom:12px;
+}
+
+.faq-item p{
+    color:#ddd;
+    line-height:1.9;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-info,
+.contact-form{
+    padding:40px;
+}
+
+.contact-info h4{
+    font-size:28px;
+    margin-bottom:25px;
+}
+
+.contact-info p{
+    line-height:2;
+    color:#ddd;
+    margin-bottom:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:16px;
+    margin-bottom:20px;
+    border:none;
+    border-radius:12px;
+    background:rgba(255,255,255,0.06);
+    color:#fff;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline:none;
+    border:1px solid #ffd700;
+    background:rgba(255,255,255,0.08);
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    background:#04060d;
+    padding:80px 40px 30px;
+    border-top:1px solid rgba(255,255,255,0.08);
+    position:relative;
+}
+
+.footer::before{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,rgba(255,215,0,0.06),transparent 70%);
+    top:-250px;
+    right:-200px;
+}
+
+.footer-container{
+    max-width:1300px;
+    margin:auto;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:50px;
+}
+
+.footer h2,
+.footer h3{
+    margin-bottom:20px;
+}
+
+.footer p,
+.footer li,
+.footer a{
+    color:rgba(255,255,255,0.72);
+    line-height:1.9;
+}
+
+.footer ul{
+    list-style:none;
+}
+
+.footer a:hover{
+    color:#ffd700;
+}
+
+.footer-bottom{
+    margin-top:60px;
+    padding-top:25px;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.risk-warning{
+    margin-top:15px;
+    font-size:13px;
+    color:rgba(255,255,255,0.45);
+    line-height:1.9;
+}
+
+/* ================= FLOATING BADGE ================= */
+
+.floating-badge{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    z-index:999;
+    background:linear-gradient(135deg,#ffd700,#ff9900);
+    color:#000;
+    padding:14px 22px;
+    border-radius:999px;
+    font-weight:700;
+    box-shadow:0 10px 30px rgba(255,215,0,0.3);
+    animation:floatBadge 2s ease-in-out infinite;
+}
+
+/* ================= ANIMATION ================= */
+
+.fade-up{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 1s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@keyframes heroFade{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes floatBadge{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+    100%{transform:translateY(0);}
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#050510;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#ffd700,#ff9900);
+    border-radius:999px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .section-title{
+        font-size:34px;
+    }
+
+    section{
+        padding:80px 20px;
+    }
+
+    .contact-wrapper{
+        grid-template-columns:1fr;
+    }
+
+}
+
 </style>
+
 </head>
+
 <body>
 
 <header>
-<h1>PipDance LLC</h1>
+
+<div class="logo">
+PipDance LLC
+</div>
+
 <nav>
 <a href="#services">Services</a>
+<a href="#funding">Funding</a>
 <a href="#stats">Stats</a>
-<a href="#team">Team</a>
-<a href="#testimonials">Testimonials</a>
+<a href="#reviews">Reviews</a>
+<a href="#faq">FAQ</a>
 <a href="#contact">Contact</a>
 </nav>
+
 </header>
 
-<!-- Hero -->
+<!-- HERO -->
+
 <section class="hero">
+
 <canvas id="heroCanvas"></canvas>
+
 <div class="hero-content">
-<h2>Professional Prop Trading Solutions</h2>
-<p>Empowering traders with capital, technology, and mentorship for success.</p>
-<button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+
+<div class="hero-badge">
+GLOBAL PROP TRADING FIRM
 </div>
+
+<h1>
+Trade Like a Professional With Funded Capital
+</h1>
+
+<p>
+Join thousands of traders worldwide and access institutional-grade funded trading accounts with fast payouts and advanced risk systems.
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn btn-primary"
+onclick="document.getElementById('funding').scrollIntoView({behavior:'smooth'})">
+Start Challenge
+</button>
+
+<button class="btn btn-secondary"
+onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+Contact Us
+</button>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- Services -->
+<!-- TRUST -->
+
+<section>
+
+<div class="trust-grid">
+
+<div class="trust-card fade-up">
+<h4>Instant Funding</h4>
+<p>Start trading funded accounts within minutes.</p>
+</div>
+
+<div class="trust-card fade-up">
+<h4>90% Profit Split</h4>
+<p>Keep the majority of your trading profits.</p>
+</div>
+
+<div class="trust-card fade-up">
+<h4>Fast Withdrawals</h4>
+<p>Secure and fast payout systems for global traders.</p>
+</div>
+
+<div class="trust-card fade-up">
+<h4>120+ Countries</h4>
+<p>Supporting traders from all around the world.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
 <section id="services">
-<h3>Our Services</h3>
+
+<h3 class="section-title">
+Our <span class="gold">Services</span>
+</h3>
+
 <div class="cards">
-<div class="card"><h4>Trading Capital</h4><p>Access significant trading capital and grow with our performance programs.</p></div>
-<div class="card"><h4>Risk Management</h4><p>Professional strategies to manage and mitigate trading risks effectively.</p></div>
-<div class="card"><h4>Mentorship</h4><p>Learn from experienced traders and accelerate your trading career.</p></div>
+
+<div class="card fade-up">
+<h4>Trading Capital</h4>
+<p>
+Access significant trading capital and scale your trading career through our advanced funding programs.
+</p>
 </div>
+
+<div class="card fade-up">
+<h4>Risk Management</h4>
+<p>
+Professional systems designed to help traders manage risk and preserve long-term profitability.
+</p>
+</div>
+
+<div class="card fade-up">
+<h4>Trading Mentorship</h4>
+<p>
+Learn directly from experienced market professionals and improve your trading performance.
+</p>
+</div>
+
+</div>
+
 </section>
 
-<!-- Stats -->
+<!-- FUNDING -->
+
+<section id="funding">
+
+<h3 class="section-title">
+Funding <span class="gold">Programs</span>
+</h3>
+
+<div class="funding-grid">
+
+<div class="funding-card fade-up">
+
+<h4>$5K Account</h4>
+
+<div class="price">$49</div>
+
+<ul>
+<li>Profit Split: 80%</li>
+<li>Max Drawdown: 10%</li>
+<li>Daily Loss: 5%</li>
+<li>Fast Payouts</li>
+</ul>
+
+<button class="btn btn-primary">
+Get Started
+</button>
+
+</div>
+
+<div class="funding-card fade-up">
+
+<h4>$10K Account</h4>
+
+<div class="price">$99</div>
+
+<ul>
+<li>Profit Split: 85%</li>
+<li>Max Drawdown: 10%</li>
+<li>Daily Loss: 5%</li>
+<li>Priority Support</li>
+</ul>
+
+<button class="btn btn-primary">
+Get Started
+</button>
+
+</div>
+
+<div class="funding-card fade-up">
+
+<h4>$50K Account</h4>
+
+<div class="price">$299</div>
+
+<ul>
+<li>Profit Split: 90%</li>
+<li>Max Drawdown: 12%</li>
+<li>Daily Loss: 6%</li>
+<li>VIP Dashboard</li>
+</ul>
+
+<button class="btn btn-primary">
+Get Started
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
 <section id="stats">
-<h3>Our Achievements</h3>
+
+<h3 class="section-title">
+Company <span class="gold">Achievements</span>
+</h3>
+
 <div class="stats">
-<div class="stat"><h4 class="num" data-target="5000000">0</h4><p>Capital Deployed ($)</p></div>
-<div class="stat"><h4 class="num" data-target="1500">0</h4><p>Traders Supported</p></div>
-<div class="stat"><h4 class="num" data-target="98">0</h4><p>% Success Rate</p></div>
+
+<div class="stat fade-up">
+<h4 class="num" data-target="5000000">0</h4>
+<p>Capital Deployed ($)</p>
 </div>
+
+<div class="stat fade-up">
+<h4 class="num" data-target="15000">0</h4>
+<p>Global Traders</p>
+</div>
+
+<div class="stat fade-up">
+<h4 class="num" data-target="98">0</h4>
+<p>% Customer Satisfaction</p>
+</div>
+
+<div class="stat fade-up">
+<h4 class="num" data-target="120">0</h4>
+<p>Countries Supported</p>
+</div>
+
+</div>
+
 </section>
 
-<!-- Team -->
-<section id="team">
-<h3>Meet Our Team</h3>
-<div class="team">
-<div class="member"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt=""><h4>John Doe</h4><p>Founder & CEO</p></div>
-<div class="member"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt=""><h4>Jane Smith</h4><p>Head of Trading</p></div>
-<div class="member"><img src="https://randomuser.me/api/portraits/men/45.jpg" alt=""><h4>Mike Brown</h4><p>Lead Analyst</p></div>
-</div>
-</section>
+<!-- REVIEWS -->
 
-<!-- Testimonials -->
-<section id="testimonials">
-<h3>Client Testimonials</h3>
+<section id="reviews">
+
+<h3 class="section-title">
+Trader <span class="gold">Reviews</span>
+</h3>
+
 <div class="testimonials">
-<div class="testimonial"><p>"PipDance LLC provided the capital and guidance I needed to achieve my trading goals. Highly recommended!"</p><h4>Emma Wilson 🇺🇸</h4></div>
-<div class="testimonial"><p>"Exceptional platform and mentorship. I doubled my account in 3 months!"</p><h4>Liam Chen 🇨🇳</h4></div>
-<div class="testimonial"><p>"Professional and reliable trading support, exactly what I was looking for."</p><h4>Sophia Müller 🇩🇪</h4></div>
-<div class="testimonial"><p>"Thanks to PipDance LLC, I finally reached consistency in my trading performance."</p><h4>Oliver Smith 🇬🇧</h4></div>
+
+<div class="testimonial fade-up">
+<p>
+"PipDance LLC provided the capital and support I needed to scale my trading career."
+</p>
+<h4>Emma Wilson 🇺🇸</h4>
 </div>
+
+<div class="testimonial fade-up">
+<p>
+"Fast payouts, clean dashboard, and very professional customer support."
+</p>
+<h4>Liam Chen 🇸🇬</h4>
+</div>
+
+<div class="testimonial fade-up">
+<p>
+"The evaluation process was fair and transparent. Highly recommended."
+</p>
+<h4>Sophia Müller 🇩🇪</h4>
+</div>
+
+</div>
+
 </section>
 
-<!-- Contact -->
+<!-- FAQ -->
+
+<section id="faq">
+
+<h3 class="section-title">
+Frequently Asked <span class="gold">Questions</span>
+</h3>
+
+<div class="faq">
+
+<div class="faq-item fade-up">
+<h4>How do funded accounts work?</h4>
+<p>
+Traders complete an evaluation phase to demonstrate consistency and risk management before receiving funded accounts.
+</p>
+</div>
+
+<div class="faq-item fade-up">
+<h4>How are payouts processed?</h4>
+<p>
+We support payouts through cryptocurrency, bank transfer, and other global payment methods.
+</p>
+</div>
+
+<div class="faq-item fade-up">
+<h4>Which platforms are supported?</h4>
+<p>
+We support MetaTrader 5, TradingView integrations, Match Trader, and cTrader platforms.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
 <section id="contact">
-<h3>Contact Us</h3>
-<form class="contact-form">
+
+<h3 class="section-title">
+Contact <span class="gold">Us</span>
+</h3>
+
+<div class="contact-wrapper">
+
+<div class="contact-info fade-up">
+
+<h4>PipDance LLC</h4>
+
+<p>
+📍 30 N Gould St Ste R<br>
+Sheridan, WY 82801<br>
+USA
+</p>
+
+<p>
+☎ +65 8098 8208
+</p>
+
+<p>
+✉ support@pipdance.com
+</p>
+
+<p>
+🕒 24/7 Global Support
+</p>
+
+</div>
+
+<form class="contact-form fade-up">
+
 <input type="text" placeholder="Your Name" required>
+
 <input type="email" placeholder="Your Email" required>
+
 <textarea rows="6" placeholder="Your Message" required></textarea>
-<button type="submit">Send Message</button>
+
+<button class="btn btn-primary" type="submit">
+Send Message
+</button>
+
 </form>
+
+</div>
+
 </section>
 
-<footer>
-&copy; 2026 PipDance LLC. All rights reserved.
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-grid">
+
+<div>
+
+<h2>PipDance LLC</h2>
+
+<p>
+Professional proprietary trading solutions for global traders.
+Access funded accounts, institutional-grade trading systems,
+and fast payouts.
+</p>
+
+</div>
+
+<div>
+
+<h3>Company</h3>
+
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#funding">Funding</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</div>
+
+<div>
+
+<h3>Contact</h3>
+
+<p>
+30 N Gould St Ste R<br>
+Sheridan, WY 82801<br>
+USA
+</p>
+
+<p>
++65 8098 8208
+</p>
+
+<p>
+support@pipdance.com
+</p>
+
+</div>
+
+<div>
+
+<h3>Platforms</h3>
+
+<ul>
+<li>MetaTrader 5</li>
+<li>TradingView</li>
+<li>cTrader</li>
+<li>Match Trader</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+© 2026 PipDance LLC. All Rights Reserved.
+</p>
+
+<p class="risk-warning">
+Risk Warning: Trading leveraged products including Forex, CFDs,
+and cryptocurrencies involves substantial risk and may not be suitable
+for all investors. Past performance does not guarantee future results.
+</p>
+
+</div>
+
+</div>
+
 </footer>
 
+<!-- FLOATING BADGE -->
+
+<div class="floating-badge">
+🔥 90% Profit Split
+</div>
+
 <script>
-// Smooth scrolling
-document.querySelectorAll('nav a').forEach(a=>{
-a.addEventListener('click', e=>{
-e.preventDefault();
-document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-});
+
+/* ================= HEADER EFFECT ================= */
+
+window.addEventListener('scroll',()=>{
+
+    const header=document.querySelector('header');
+
+    if(window.scrollY>50){
+
+        header.style.background='rgba(0,0,0,0.88)';
+        header.style.boxShadow='0 10px 30px rgba(0,0,0,0.35)';
+
+    }else{
+
+        header.style.background='rgba(0,0,0,0.55)';
+        header.style.boxShadow='none';
+
+    }
+
 });
 
-// Fade in on scroll
-const faders=document.querySelectorAll('.card,.stat,.member,.contact-form,.testimonial');
-const observer=new IntersectionObserver((entries,observer)=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){entry.target.style.animation='fadeInUp 0.8s forwards';observer.unobserve(entry.target);}
-});
-},{threshold:0.1});
-faders.forEach(fader=>observer.observe(fader));
+/* ================= CONTACT FORM ================= */
 
-// Counters
+document.querySelector('.contact-form')
+.addEventListener('submit',e=>{
+
+    e.preventDefault();
+
+    alert('Thank you! Your message has been sent.');
+
+    e.target.reset();
+
+});
+
+/* ================= COUNTER ================= */
+
 const counters=document.querySelectorAll('.num');
+
 counters.forEach(counter=>{
-counter.innerText='0';
-const updateCounter=()=>{
-const target=+counter.getAttribute('data-target');
-const c=+counter.innerText.replace(/,/g,'');
-const increment=target/200;
-if(c<target){counter.innerText=`${Math.ceil(c+increment)}`;setTimeout(updateCounter,10);}
-else counter.innerText=target.toLocaleString();
-};
-const obs=new IntersectionObserver(entries=>{if(entries[0].isIntersecting) updateCounter();},{threshold:0.5});
-obs.observe(counter);
+
+    counter.innerText='0';
+
+    const updateCounter=()=>{
+
+        const target=+counter.getAttribute('data-target');
+        const c=+counter.innerText.replace(/,/g,'');
+
+        const increment=target/200;
+
+        if(c<target){
+
+            counter.innerText=`${Math.ceil(c+increment)}`;
+
+            setTimeout(updateCounter,10);
+
+        }else{
+
+            counter.innerText=target.toLocaleString();
+
+        }
+
+    };
+
+    const obs=new IntersectionObserver(entries=>{
+
+        if(entries[0].isIntersecting){
+
+            updateCounter();
+
+        }
+
+    },{threshold:0.5});
+
+    obs.observe(counter);
+
 });
 
-// Testimonials carousel
-let current=0;
-const testimonials=document.querySelectorAll('.testimonial');
-function showTestimonial(index){testimonials.forEach((t,i)=>t.style.display='none');testimonials[index].style.display='block';}
-showTestimonial(current);
-setInterval(()=>{current=(current+1)%testimonials.length;showTestimonial(current);},5000);
+/* ================= FADE UP ================= */
 
-// Contact alert
-document.querySelector('.contact-form').addEventListener('submit',e=>{e.preventDefault();alert('Thank you! Your message has been sent.');e.target.reset();});
+const fadeEls=document.querySelectorAll('.fade-up');
 
-// Hero Particles
+const fadeObserver=new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add('show');
+
+        }
+
+    });
+
+},{threshold:0.15});
+
+fadeEls.forEach(el=>{
+
+    fadeObserver.observe(el);
+
+});
+
+/* ================= HERO PARTICLES ================= */
+
 const canvas=document.getElementById('heroCanvas');
 const ctx=canvas.getContext('2d');
-canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
 let particles=[];
-for(let i=0;i<120;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2+1,dx:(Math.random()-0.5)*0.5,dy:(Math.random()-0.5)*0.5});}
-function animateParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,0.6)';ctx.fill();p.x+=p.dx;p.y+=p.dy;if(p.x>canvas.width||p.x<0)p.dx*=-1;if(p.y>canvas.height||p.y<0)p.dy*=-1;});requestAnimationFrame(animateParticles);}
+
+for(let i=0;i<120;i++){
+
+    particles.push({
+
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2+1,
+        dx:(Math.random()-0.5)*0.5,
+        dy:(Math.random()-0.5)*0.5
+
+    });
+
+}
+
+function animateParticles(){
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    particles.forEach(p=>{
+
+        ctx.beginPath();
+
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+
+        ctx.fillStyle='rgba(255,255,255,0.6)';
+
+        ctx.fill();
+
+        p.x+=p.dx;
+        p.y+=p.dy;
+
+        if(p.x>canvas.width||p.x<0) p.dx*=-1;
+        if(p.y>canvas.height||p.y<0) p.dy*=-1;
+
+    });
+
+    requestAnimationFrame(animateParticles);
+
+}
+
 animateParticles();
-window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
+
+window.addEventListener('resize',()=>{
+
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+
+});
+
 </script>
 
 </body>
