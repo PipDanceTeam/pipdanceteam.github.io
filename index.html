@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PipDance | Funded Trading Accounts & Prop Firm Solutions</title>
+<title>PipDance LLC | Professional Prop Trading Firm</title>
 
 <meta name="description"
-content="PipDance LLC provides funded trading accounts, prop firm challenges, advanced risk management, and institutional-grade trading solutions for global traders." />
+content="PipDance LLC provides funded trading accounts, institutional-grade trading technology, fast payouts, and global prop trading solutions.">
 
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -27,31 +28,30 @@ html{
 }
 
 body{
-    font-family:'Roboto',sans-serif;
-    background:#070b16;
+    background:#050816;
     color:#fff;
+    font-family:'Roboto',sans-serif;
     overflow-x:hidden;
     position:relative;
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
+/* ================= BACKGROUND ================= */
 
-section{
-    padding:100px 40px;
-    max-width:1300px;
-    margin:auto;
-    position:relative;
-    z-index:2;
-}
+.market-bg{
+    position:fixed;
+    inset:0;
+    z-index:-3;
 
-h1,h2,h3,h4{
-    font-family:'Montserrat',sans-serif;
-}
+    background-image:
+    url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2070&auto=format&fit=crop');
 
-/* ================= BACKGROUND GLOW ================= */
+    background-size:cover;
+    background-position:center;
+
+    opacity:0.08;
+
+    filter:blur(2px);
+}
 
 body::before{
     content:'';
@@ -61,7 +61,7 @@ body::before{
     background:radial-gradient(circle,#ffd70022 0%,transparent 70%);
     top:-250px;
     right:-250px;
-    z-index:0;
+    z-index:-2;
 }
 
 body::after{
@@ -72,31 +72,39 @@ body::after{
     background:radial-gradient(circle,#2563eb22 0%,transparent 70%);
     bottom:-250px;
     left:-250px;
-    z-index:0;
+    z-index:-2;
 }
 
 /* ================= HEADER ================= */
 
 header{
     position:fixed;
-    width:100%;
     top:0;
     left:0;
+    width:100%;
     z-index:999;
-    padding:22px 50px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
+    padding:22px 50px;
+
     background:rgba(0,0,0,0.55);
+
     backdrop-filter:blur(14px);
+
     border-bottom:1px solid rgba(255,255,255,0.08);
+
     transition:0.3s;
 }
 
 .logo{
-    font-size:30px;
+    font-family:'Montserrat',sans-serif;
+    font-size:32px;
     font-weight:800;
-    color:#fff;
+    color:#ffd700;
+    letter-spacing:1px;
 }
 
 nav{
@@ -106,6 +114,7 @@ nav{
 
 nav a{
     color:#fff;
+    text-decoration:none;
     font-weight:600;
     transition:0.3s;
 }
@@ -114,36 +123,85 @@ nav a:hover{
     color:#ffd700;
 }
 
+/* ================= TICKER ================= */
+
+.ticker{
+    position:fixed;
+    top:88px;
+    left:0;
+    width:100%;
+    background:#0b1224;
+    overflow:hidden;
+    z-index:998;
+    border-top:1px solid rgba(255,255,255,0.05);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.ticker-track{
+    display:flex;
+    width:max-content;
+    animation:tickerMove 30s linear infinite;
+}
+
+.ticker-item{
+    padding:12px 40px;
+    font-size:14px;
+    color:#ddd;
+}
+
+.green{
+    color:#22c55e;
+}
+
+.red{
+    color:#ef4444;
+}
+
+@keyframes tickerMove{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
 /* ================= HERO ================= */
 
 .hero{
     height:100vh;
     position:relative;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     text-align:center;
+
     overflow:hidden;
 
     background:
-    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.75)),
-    url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+    linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.78)),
+
+    url('https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=2070&auto=format&fit=crop')
+    center/cover no-repeat;
+
+    background-attachment:fixed;
 }
 
 .hero::before{
     content:'';
     position:absolute;
-    width:100%;
-    height:100%;
+    inset:0;
+
     background:
-    radial-gradient(circle at top right,rgba(255,215,0,0.15),transparent 35%),
-    radial-gradient(circle at bottom left,rgba(37,99,235,0.15),transparent 35%);
+    radial-gradient(circle at top right,rgba(255,215,0,0.12),transparent 35%),
+    radial-gradient(circle at bottom left,rgba(37,99,235,0.12),transparent 35%);
 }
 
 .hero canvas{
     position:absolute;
-    top:0;
-    left:0;
+    inset:0;
     width:100%;
     height:100%;
 }
@@ -151,36 +209,51 @@ nav a:hover{
 .hero-content{
     position:relative;
     z-index:2;
-    max-width:900px;
+    max-width:950px;
     padding:20px;
-    animation:heroFade 1.4s ease forwards;
 }
 
 .hero-badge{
     display:inline-block;
-    padding:10px 20px;
-    background:rgba(255,215,0,0.15);
-    border:1px solid rgba(255,215,0,0.35);
+
+    padding:10px 22px;
+
+    background:rgba(255,215,0,0.12);
+
+    border:1px solid rgba(255,215,0,0.25);
+
     border-radius:999px;
+
     color:#ffd700;
+
     font-size:14px;
     font-weight:700;
+
     margin-bottom:30px;
 }
 
 .hero h1{
-    font-size:72px;
+    font-family:'Montserrat',sans-serif;
+
+    font-size:76px;
+
     line-height:1.1;
-    margin-bottom:25px;
+
+    margin-bottom:28px;
+
     background:linear-gradient(to right,#fff,#ffd700);
+
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
 .hero p{
     font-size:22px;
+
+    line-height:1.9;
+
     color:#ddd;
-    line-height:1.8;
+
     margin-bottom:40px;
 }
 
@@ -191,33 +264,47 @@ nav a:hover{
     flex-wrap:wrap;
 }
 
-/* ================= BUTTONS ================= */
+/* ================= BUTTON ================= */
 
 .btn{
-    position:relative;
-    overflow:hidden;
-    padding:16px 38px;
+    padding:17px 40px;
+
     border:none;
+
     border-radius:999px;
-    font-size:17px;
+
+    font-size:16px;
+
     font-weight:700;
+
     cursor:pointer;
+
     transition:0.3s;
+
+    position:relative;
+
+    overflow:hidden;
 }
 
 .btn::before{
     content:'';
+
     position:absolute;
+
     top:0;
     left:-100%;
+
     width:100%;
     height:100%;
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,0.25),
-        transparent
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
     );
+
     transition:0.6s;
 }
 
@@ -238,31 +325,51 @@ nav a:hover{
 .btn-secondary{
     background:rgba(255,255,255,0.08);
     color:#fff;
-    border:1px solid rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.1);
 }
 
 .btn-secondary:hover{
-    background:rgba(255,255,255,0.15);
+    background:rgba(255,255,255,0.14);
 }
 
-/* ================= TITLES ================= */
+/* ================= SECTIONS ================= */
+
+section{
+    max-width:1300px;
+    margin:auto;
+    padding:110px 40px;
+    position:relative;
+    z-index:2;
+}
 
 .section-title{
-    font-size:42px;
     text-align:center;
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:42px;
+
     margin-bottom:70px;
+
     position:relative;
 }
 
 .section-title::after{
     content:'';
+
+    position:absolute;
+
     width:120px;
     height:4px;
-    background:linear-gradient(90deg,#ffd700,#ff9900);
-    position:absolute;
+
+    background:
+    linear-gradient(90deg,#ffd700,#ff9900);
+
     left:50%;
     bottom:-18px;
+
     transform:translateX(-50%);
+
     border-radius:999px;
 }
 
@@ -270,102 +377,71 @@ nav a:hover{
     color:#ffd700;
 }
 
-/* ================= TRUST ================= */
-
-.trust-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:25px;
-    margin-top:-60px;
-    position:relative;
-    z-index:3;
-}
-
-.trust-card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.08);
-    padding:35px;
-    border-radius:24px;
-    backdrop-filter:blur(14px);
-    transition:0.4s;
-    overflow:hidden;
-    position:relative;
-}
-
-.trust-card::before{
-    content:'';
-    position:absolute;
-    width:120px;
-    height:120px;
-    background:rgba(255,215,0,0.08);
-    border-radius:50%;
-    top:-50px;
-    right:-50px;
-}
-
-.trust-card:hover{
-    transform:translateY(-10px);
-    border-color:#ffd700;
-    box-shadow:0 20px 50px rgba(0,0,0,0.4);
-}
-
-.trust-card h4{
-    font-size:24px;
-    color:#ffd700;
-    margin-bottom:14px;
-}
-
-.trust-card p{
-    color:#ddd;
-    line-height:1.8;
-}
-
 /* ================= CARDS ================= */
 
 .cards,
-.funding-grid,
 .stats,
-.testimonials{
+.testimonials,
+.funding-grid,
+.trust-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
 }
 
 .card,
-.funding-card,
 .stat,
 .testimonial,
-.faq-item,
-.contact-form,
-.contact-info{
-    background:rgba(255,255,255,0.05);
+.funding-card,
+.trust-card,
+.contact-box{
+    background:
+    linear-gradient(
+    145deg,
+    rgba(17,24,39,0.95),
+    rgba(10,15,30,0.92)
+    );
+
     border:1px solid rgba(255,255,255,0.08);
-    border-radius:24px;
-    backdrop-filter:blur(14px);
+
+    border-radius:28px;
+
+    padding:38px;
+
+    backdrop-filter:blur(18px);
+
     transition:0.4s;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
 .card:hover,
-.funding-card:hover,
 .stat:hover,
 .testimonial:hover,
-.faq-item:hover{
+.funding-card:hover,
+.trust-card:hover,
+.contact-box:hover{
     transform:translateY(-10px);
+
     border-color:#ffd700;
-    box-shadow:0 20px 50px rgba(0,0,0,0.45);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,0.45),
+    0 0 40px rgba(255,215,0,0.08);
 }
 
-.card{
-    padding:35px;
-}
-
-.card h4{
+.card h4,
+.trust-card h4{
     font-size:26px;
-    margin-bottom:15px;
+    margin-bottom:16px;
     color:#ffd700;
 }
 
-.card p{
+.card p,
+.trust-card p,
+.testimonial p{
     color:#ddd;
     line-height:1.9;
 }
@@ -373,7 +449,6 @@ nav a:hover{
 /* ================= FUNDING ================= */
 
 .funding-card{
-    padding:45px;
     text-align:center;
     position:relative;
     overflow:hidden;
@@ -381,13 +456,19 @@ nav a:hover{
 
 .funding-card::before{
     content:'POPULAR';
+
     position:absolute;
+
     top:20px;
-    right:-35px;
+    right:-38px;
+
     background:#ffd700;
     color:#000;
+
     padding:8px 40px;
+
     transform:rotate(45deg);
+
     font-size:12px;
     font-weight:700;
 }
@@ -402,17 +483,11 @@ nav a:hover{
     color:#fff;
 }
 
-.funding-card h4{
-    font-size:30px;
-    margin-bottom:20px;
-}
-
 .price{
-    font-size:58px;
+    font-size:62px;
     font-weight:800;
     color:#ffd700;
-    margin-bottom:25px;
-    text-shadow:0 0 20px rgba(255,215,0,0.3);
+    margin-bottom:20px;
 }
 
 .funding-card ul{
@@ -421,7 +496,7 @@ nav a:hover{
 }
 
 .funding-card li{
-    margin-bottom:15px;
+    margin-bottom:14px;
     color:#ddd;
 }
 
@@ -429,65 +504,90 @@ nav a:hover{
 
 .stat{
     text-align:center;
-    padding:45px;
 }
 
 .stat h4{
     font-size:54px;
     color:#ffd700;
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .stat p{
     color:#ddd;
 }
 
-/* ================= TESTIMONIALS ================= */
+/* ================= TRADING SCREEN ================= */
+
+.trading-screen-section{
+    padding-top:40px;
+}
+
+.trading-screen{
+    position:relative;
+
+    border-radius:34px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 20px 80px rgba(0,0,0,0.45),
+    0 0 40px rgba(255,215,0,0.05);
+}
+
+.trading-screen img{
+    width:100%;
+    height:700px;
+    object-fit:cover;
+    display:block;
+}
+
+.screen-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.8)
+    );
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    padding:60px;
+}
+
+.screen-overlay h2{
+    font-size:54px;
+    margin-bottom:20px;
+}
+
+.screen-overlay p{
+    max-width:760px;
+    font-size:20px;
+    color:#ddd;
+    line-height:1.9;
+}
+
+/* ================= TESTIMONIAL ================= */
 
 .testimonial{
-    padding:35px;
     position:relative;
 }
 
 .testimonial::before{
     content:'★★★★★';
+
     position:absolute;
+
     top:20px;
-    right:25px;
+    right:20px;
+
     color:#ffd700;
     font-size:14px;
-}
-
-.testimonial p{
-    line-height:1.9;
-    color:#ddd;
-    margin-bottom:18px;
-}
-
-.testimonial h4{
-    color:#ffd700;
-}
-
-/* ================= FAQ ================= */
-
-.faq{
-    max-width:900px;
-    margin:auto;
-}
-
-.faq-item{
-    padding:30px;
-    margin-bottom:20px;
-}
-
-.faq-item h4{
-    color:#ffd700;
-    margin-bottom:12px;
-}
-
-.faq-item p{
-    color:#ddd;
-    line-height:1.9;
 }
 
 /* ================= CONTACT ================= */
@@ -495,122 +595,142 @@ nav a:hover{
 .contact-wrapper{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:40px;
+    gap:35px;
 }
 
-.contact-info,
-.contact-form{
-    padding:40px;
-}
-
-.contact-info h4{
-    font-size:28px;
-    margin-bottom:25px;
-}
-
-.contact-info p{
-    line-height:2;
-    color:#ddd;
-    margin-bottom:15px;
-}
-
-.contact-form input,
-.contact-form textarea{
-    width:100%;
-    padding:16px;
+.contact-box h3{
+    font-size:30px;
     margin-bottom:20px;
-    border:none;
-    border-radius:12px;
-    background:rgba(255,255,255,0.06);
-    color:#fff;
-    font-size:16px;
-    transition:0.3s;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus{
+.contact-box p{
+    color:#ddd;
+    line-height:2;
+}
+
+.contact-box input,
+.contact-box textarea{
+    width:100%;
+
+    padding:16px;
+
+    margin-bottom:20px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,0.06);
+
+    color:#fff;
+
+    font-size:16px;
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus{
     outline:none;
     border:1px solid #ffd700;
-    background:rgba(255,255,255,0.08);
 }
 
 /* ================= FOOTER ================= */
 
-.footer{
-    background:#04060d;
+footer{
+    background:#03050c;
+
     padding:80px 40px 30px;
+
     border-top:1px solid rgba(255,255,255,0.08);
-    position:relative;
-}
-
-.footer::before{
-    content:'';
-    position:absolute;
-    width:500px;
-    height:500px;
-    background:radial-gradient(circle,rgba(255,215,0,0.06),transparent 70%);
-    top:-250px;
-    right:-200px;
-}
-
-.footer-container{
-    max-width:1300px;
-    margin:auto;
 }
 
 .footer-grid{
+    max-width:1300px;
+    margin:auto;
+
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:50px;
+
+    gap:40px;
 }
 
-.footer h2,
-.footer h3{
+footer h3{
     margin-bottom:20px;
 }
 
-.footer p,
-.footer li,
-.footer a{
+footer p,
+footer li{
     color:rgba(255,255,255,0.72);
     line-height:1.9;
 }
 
-.footer ul{
+footer ul{
     list-style:none;
 }
 
-.footer a:hover{
-    color:#ffd700;
-}
-
 .footer-bottom{
-    margin-top:60px;
+    max-width:1300px;
+
+    margin:60px auto 0;
+
     padding-top:25px;
+
     border-top:1px solid rgba(255,255,255,0.08);
+
+    color:rgba(255,255,255,0.55);
+
+    font-size:14px;
 }
 
-.risk-warning{
-    margin-top:15px;
-    font-size:13px;
-    color:rgba(255,255,255,0.45);
-    line-height:1.9;
-}
-
-/* ================= FLOATING BADGE ================= */
+/* ================= FLOATING ================= */
 
 .floating-badge{
     position:fixed;
-    bottom:25px;
-    right:25px;
+
+    bottom:24px;
+    right:24px;
+
     z-index:999;
-    background:linear-gradient(135deg,#ffd700,#ff9900);
+
+    background:
+    linear-gradient(135deg,#ffd700,#ff9900);
+
     color:#000;
+
     padding:14px 22px;
+
     border-radius:999px;
+
     font-weight:700;
-    box-shadow:0 10px 30px rgba(255,215,0,0.3);
-    animation:floatBadge 2s ease-in-out infinite;
+
+    box-shadow:
+    0 10px 30px rgba(255,215,0,0.3);
+
+    animation:floatBadge 2s ease infinite;
+}
+
+@keyframes floatBadge{
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* ================= SVG LINE ================= */
+
+.trading-lines{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    z-index:-1;
+    opacity:0.4;
 }
 
 /* ================= ANIMATION ================= */
@@ -624,38 +744,6 @@ nav a:hover{
 .fade-up.show{
     opacity:1;
     transform:translateY(0);
-}
-
-@keyframes heroFade{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes floatBadge{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-8px);}
-    100%{transform:translateY(0);}
-}
-
-/* ================= SCROLLBAR ================= */
-
-::-webkit-scrollbar{
-    width:10px;
-}
-
-::-webkit-scrollbar-track{
-    background:#050510;
-}
-
-::-webkit-scrollbar-thumb{
-    background:linear-gradient(#ffd700,#ff9900);
-    border-radius:999px;
 }
 
 /* ================= MOBILE ================= */
@@ -674,19 +762,23 @@ nav a:hover{
     }
 
     .hero h1{
-        font-size:42px;
+        font-size:46px;
     }
 
     .hero p{
         font-size:18px;
     }
 
-    .section-title{
-        font-size:34px;
+    .screen-overlay h2{
+        font-size:38px;
+    }
+
+    .screen-overlay p{
+        font-size:17px;
     }
 
     section{
-        padding:80px 20px;
+        padding:90px 20px;
     }
 
     .contact-wrapper{
@@ -701,10 +793,14 @@ nav a:hover{
 
 <body>
 
+<div class="market-bg"></div>
+
+<!-- HEADER -->
+
 <header>
 
 <div class="logo">
-PipDance LLC
+PipDance
 </div>
 
 <nav>
@@ -712,11 +808,34 @@ PipDance LLC
 <a href="#funding">Funding</a>
 <a href="#stats">Stats</a>
 <a href="#reviews">Reviews</a>
-<a href="#faq">FAQ</a>
 <a href="#contact">Contact</a>
 </nav>
 
 </header>
+
+<!-- MARKET TICKER -->
+
+<div class="ticker">
+
+<div class="ticker-track">
+
+<div class="ticker-item">BTC/USD <span class="green">+3.42%</span></div>
+<div class="ticker-item">ETH/USD <span class="green">+2.10%</span></div>
+<div class="ticker-item">NASDAQ <span class="green">+1.12%</span></div>
+<div class="ticker-item">EUR/USD <span class="red">-0.21%</span></div>
+<div class="ticker-item">GOLD <span class="green">+0.82%</span></div>
+<div class="ticker-item">S&P500 <span class="green">+0.91%</span></div>
+
+<div class="ticker-item">BTC/USD <span class="green">+3.42%</span></div>
+<div class="ticker-item">ETH/USD <span class="green">+2.10%</span></div>
+<div class="ticker-item">NASDAQ <span class="green">+1.12%</span></div>
+<div class="ticker-item">EUR/USD <span class="red">-0.21%</span></div>
+<div class="ticker-item">GOLD <span class="green">+0.82%</span></div>
+<div class="ticker-item">S&P500 <span class="green">+0.91%</span></div>
+
+</div>
+
+</div>
 
 <!-- HERO -->
 
@@ -727,15 +846,16 @@ PipDance LLC
 <div class="hero-content">
 
 <div class="hero-badge">
-GLOBAL PROP TRADING FIRM
+INSTITUTIONAL PROP TRADING
 </div>
 
 <h1>
-Trade Like a Professional With Funded Capital
+Funded Trading Accounts For Global Traders
 </h1>
 
 <p>
-Join thousands of traders worldwide and access institutional-grade funded trading accounts with fast payouts and advanced risk systems.
+Trade with institutional capital, advanced analytics,
+professional risk systems, and lightning-fast payouts.
 </p>
 
 <div class="hero-buttons">
@@ -763,23 +883,49 @@ Contact Us
 <div class="trust-grid">
 
 <div class="trust-card fade-up">
-<h4>Instant Funding</h4>
-<p>Start trading funded accounts within minutes.</p>
-</div>
-
-<div class="trust-card fade-up">
 <h4>90% Profit Split</h4>
-<p>Keep the majority of your trading profits.</p>
+<p>Keep most of your profits with our trader-friendly payout model.</p>
 </div>
 
 <div class="trust-card fade-up">
 <h4>Fast Withdrawals</h4>
-<p>Secure and fast payout systems for global traders.</p>
+<p>Reliable and secure payouts for traders worldwide.</p>
+</div>
+
+<div class="trust-card fade-up">
+<h4>Institutional Technology</h4>
+<p>Trade using advanced professional-grade trading infrastructure.</p>
 </div>
 
 <div class="trust-card fade-up">
 <h4>120+ Countries</h4>
-<p>Supporting traders from all around the world.</p>
+<p>Trusted by traders from all over the world.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TRADING SCREEN -->
+
+<section class="trading-screen-section">
+
+<div class="trading-screen fade-up">
+
+<img src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=2070&auto=format&fit=crop">
+
+<div class="screen-overlay">
+
+<h2>
+Institutional Trading Environment
+</h2>
+
+<p>
+Advanced execution systems, real-time analytics,
+professional trading dashboards, and institutional-grade
+market infrastructure.
+</p>
+
 </div>
 
 </div>
@@ -790,31 +936,40 @@ Contact Us
 
 <section id="services">
 
-<h3 class="section-title">
+<h2 class="section-title">
 Our <span class="gold">Services</span>
-</h3>
+</h2>
 
 <div class="cards">
 
 <div class="card fade-up">
+
 <h4>Trading Capital</h4>
+
 <p>
-Access significant trading capital and scale your trading career through our advanced funding programs.
+Access significant trading capital and scale your trading career through our professional funding programs.
 </p>
+
 </div>
 
 <div class="card fade-up">
+
 <h4>Risk Management</h4>
+
 <p>
-Professional systems designed to help traders manage risk and preserve long-term profitability.
+Professional systems designed to help traders preserve capital and improve long-term profitability.
 </p>
+
 </div>
 
 <div class="card fade-up">
-<h4>Trading Mentorship</h4>
+
+<h4>Mentorship</h4>
+
 <p>
-Learn directly from experienced market professionals and improve your trading performance.
+Learn directly from experienced traders and institutional market professionals.
 </p>
+
 </div>
 
 </div>
@@ -825,23 +980,25 @@ Learn directly from experienced market professionals and improve your trading pe
 
 <section id="funding">
 
-<h3 class="section-title">
+<h2 class="section-title">
 Funding <span class="gold">Programs</span>
-</h3>
+</h2>
 
 <div class="funding-grid">
 
 <div class="funding-card fade-up">
 
-<h4>$5K Account</h4>
+<h3>$5K Account</h3>
 
-<div class="price">$49</div>
+<div class="price">
+$49
+</div>
 
 <ul>
-<li>Profit Split: 80%</li>
-<li>Max Drawdown: 10%</li>
-<li>Daily Loss: 5%</li>
-<li>Fast Payouts</li>
+<li>80% Profit Split</li>
+<li>10% Max Drawdown</li>
+<li>5% Daily Loss Limit</li>
+<li>Fast Withdrawals</li>
 </ul>
 
 <button class="btn btn-primary">
@@ -852,15 +1009,17 @@ Get Started
 
 <div class="funding-card fade-up">
 
-<h4>$10K Account</h4>
+<h3>$10K Account</h3>
 
-<div class="price">$99</div>
+<div class="price">
+$99
+</div>
 
 <ul>
-<li>Profit Split: 85%</li>
-<li>Max Drawdown: 10%</li>
-<li>Daily Loss: 5%</li>
+<li>85% Profit Split</li>
+<li>10% Max Drawdown</li>
 <li>Priority Support</li>
+<li>Institutional Dashboard</li>
 </ul>
 
 <button class="btn btn-primary">
@@ -871,15 +1030,17 @@ Get Started
 
 <div class="funding-card fade-up">
 
-<h4>$50K Account</h4>
+<h3>$50K Account</h3>
 
-<div class="price">$299</div>
+<div class="price">
+$299
+</div>
 
 <ul>
-<li>Profit Split: 90%</li>
-<li>Max Drawdown: 12%</li>
-<li>Daily Loss: 6%</li>
-<li>VIP Dashboard</li>
+<li>90% Profit Split</li>
+<li>12% Max Drawdown</li>
+<li>VIP Trader Benefits</li>
+<li>Premium Analytics</li>
 </ul>
 
 <button class="btn btn-primary">
@@ -896,30 +1057,58 @@ Get Started
 
 <section id="stats">
 
-<h3 class="section-title">
+<h2 class="section-title">
 Company <span class="gold">Achievements</span>
-</h3>
+</h2>
 
 <div class="stats">
 
 <div class="stat fade-up">
-<h4 class="num" data-target="5000000">0</h4>
-<p>Capital Deployed ($)</p>
+
+<h4 class="num" data-target="5000000">
+0
+</h4>
+
+<p>
+Capital Deployed ($)
+</p>
+
 </div>
 
 <div class="stat fade-up">
-<h4 class="num" data-target="15000">0</h4>
-<p>Global Traders</p>
+
+<h4 class="num" data-target="15000">
+0
+</h4>
+
+<p>
+Global Traders
+</p>
+
 </div>
 
 <div class="stat fade-up">
-<h4 class="num" data-target="98">0</h4>
-<p>% Customer Satisfaction</p>
+
+<h4 class="num" data-target="98">
+0
+</h4>
+
+<p>
+Customer Satisfaction %
+</p>
+
 </div>
 
 <div class="stat fade-up">
-<h4 class="num" data-target="120">0</h4>
-<p>Countries Supported</p>
+
+<h4 class="num" data-target="120">
+0
+</h4>
+
+<p>
+Countries Supported
+</p>
+
 </div>
 
 </div>
@@ -930,66 +1119,46 @@ Company <span class="gold">Achievements</span>
 
 <section id="reviews">
 
-<h3 class="section-title">
+<h2 class="section-title">
 Trader <span class="gold">Reviews</span>
-</h3>
+</h2>
 
 <div class="testimonials">
 
 <div class="testimonial fade-up">
+
 <p>
-"PipDance LLC provided the capital and support I needed to scale my trading career."
+"PipDance helped me scale my trading career with professional funding and excellent support."
 </p>
-<h4>Emma Wilson 🇺🇸</h4>
+
+<h4>
+Emma Wilson 🇺🇸
+</h4>
+
 </div>
 
 <div class="testimonial fade-up">
+
 <p>
-"Fast payouts, clean dashboard, and very professional customer support."
+"Very clean dashboard and fast payouts. One of the best prop trading experiences."
 </p>
-<h4>Liam Chen 🇸🇬</h4>
+
+<h4>
+Liam Chen 🇸🇬
+</h4>
+
 </div>
 
 <div class="testimonial fade-up">
+
 <p>
-"The evaluation process was fair and transparent. Highly recommended."
+"The trading environment feels professional and institutional-grade."
 </p>
-<h4>Sophia Müller 🇩🇪</h4>
-</div>
 
-</div>
+<h4>
+Sophia Müller 🇩🇪
+</h4>
 
-</section>
-
-<!-- FAQ -->
-
-<section id="faq">
-
-<h3 class="section-title">
-Frequently Asked <span class="gold">Questions</span>
-</h3>
-
-<div class="faq">
-
-<div class="faq-item fade-up">
-<h4>How do funded accounts work?</h4>
-<p>
-Traders complete an evaluation phase to demonstrate consistency and risk management before receiving funded accounts.
-</p>
-</div>
-
-<div class="faq-item fade-up">
-<h4>How are payouts processed?</h4>
-<p>
-We support payouts through cryptocurrency, bank transfer, and other global payment methods.
-</p>
-</div>
-
-<div class="faq-item fade-up">
-<h4>Which platforms are supported?</h4>
-<p>
-We support MetaTrader 5, TradingView integrations, Match Trader, and cTrader platforms.
-</p>
 </div>
 
 </div>
@@ -1000,15 +1169,17 @@ We support MetaTrader 5, TradingView integrations, Match Trader, and cTrader pla
 
 <section id="contact">
 
-<h3 class="section-title">
+<h2 class="section-title">
 Contact <span class="gold">Us</span>
-</h3>
+</h2>
 
 <div class="contact-wrapper">
 
-<div class="contact-info fade-up">
+<div class="contact-box fade-up">
 
-<h4>PipDance LLC</h4>
+<h3>
+PipDance LLC
+</h3>
 
 <p>
 📍 30 N Gould St Ste R<br>
@@ -1030,13 +1201,15 @@ USA
 
 </div>
 
-<form class="contact-form fade-up">
+<div class="contact-box fade-up">
+
+<form>
 
 <input type="text" placeholder="Your Name" required>
 
 <input type="email" placeholder="Your Email" required>
 
-<textarea rows="6" placeholder="Your Message" required></textarea>
+<textarea rows="6" placeholder="Your Message"></textarea>
 
 <button class="btn btn-primary" type="submit">
 Send Message
@@ -1046,24 +1219,22 @@ Send Message
 
 </div>
 
+</div>
+
 </section>
 
 <!-- FOOTER -->
 
-<footer class="footer">
-
-<div class="footer-container">
+<footer>
 
 <div class="footer-grid">
 
 <div>
 
-<h2>PipDance LLC</h2>
+<h3>PipDance LLC</h3>
 
 <p>
 Professional proprietary trading solutions for global traders.
-Access funded accounts, institutional-grade trading systems,
-and fast payouts.
 </p>
 
 </div>
@@ -1073,17 +1244,17 @@ and fast payouts.
 <h3>Company</h3>
 
 <ul>
-<li><a href="#services">Services</a></li>
-<li><a href="#funding">Funding</a></li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#contact">Contact</a></li>
+<li>Funding Programs</li>
+<li>Trading Rules</li>
+<li>Affiliate Program</li>
+<li>Contact</li>
 </ul>
 
 </div>
 
 <div>
 
-<h3>Contact</h3>
+<h3>Address</h3>
 
 <p>
 30 N Gould St Ste R<br>
@@ -1091,26 +1262,15 @@ Sheridan, WY 82801<br>
 USA
 </p>
 
-<p>
-+65 8098 8208
-</p>
-
-<p>
-support@pipdance.com
-</p>
-
 </div>
 
 <div>
 
-<h3>Platforms</h3>
+<h3>Risk Warning</h3>
 
-<ul>
-<li>MetaTrader 5</li>
-<li>TradingView</li>
-<li>cTrader</li>
-<li>Match Trader</li>
-</ul>
+<p>
+Trading leveraged products involves substantial risk and may not be suitable for all investors.
+</p>
 
 </div>
 
@@ -1118,31 +1278,36 @@ support@pipdance.com
 
 <div class="footer-bottom">
 
-<p>
 © 2026 PipDance LLC. All Rights Reserved.
-</p>
-
-<p class="risk-warning">
-Risk Warning: Trading leveraged products including Forex, CFDs,
-and cryptocurrencies involves substantial risk and may not be suitable
-for all investors. Past performance does not guarantee future results.
-</p>
-
-</div>
 
 </div>
 
 </footer>
 
-<!-- FLOATING BADGE -->
+<!-- FLOATING -->
 
 <div class="floating-badge">
 🔥 90% Profit Split
 </div>
 
+<!-- SVG LINE -->
+
+<svg class="trading-lines" viewBox="0 0 1440 320">
+
+<path
+fill="none"
+stroke="rgba(255,215,0,0.12)"
+stroke-width="3"
+
+d="M0,160L80,170L160,120L240,150L320,110L400,130L480,90L560,120L640,80L720,100L800,60L880,100L960,70L1040,110L1120,90L1200,130L1280,100L1360,140L1440,120">
+
+</path>
+
+</svg>
+
 <script>
 
-/* ================= HEADER EFFECT ================= */
+/* ================= HEADER ================= */
 
 window.addEventListener('scroll',()=>{
 
@@ -1162,19 +1327,6 @@ window.addEventListener('scroll',()=>{
 
 });
 
-/* ================= CONTACT FORM ================= */
-
-document.querySelector('.contact-form')
-.addEventListener('submit',e=>{
-
-    e.preventDefault();
-
-    alert('Thank you! Your message has been sent.');
-
-    e.target.reset();
-
-});
-
 /* ================= COUNTER ================= */
 
 const counters=document.querySelectorAll('.num');
@@ -1186,6 +1338,7 @@ counters.forEach(counter=>{
     const updateCounter=()=>{
 
         const target=+counter.getAttribute('data-target');
+
         const c=+counter.innerText.replace(/,/g,'');
 
         const increment=target/200;
@@ -1242,9 +1395,23 @@ fadeEls.forEach(el=>{
 
 });
 
-/* ================= HERO PARTICLES ================= */
+/* ================= CONTACT ================= */
+
+document.querySelector('form')
+.addEventListener('submit',e=>{
+
+    e.preventDefault();
+
+    alert('Thank you! Your message has been sent.');
+
+    e.target.reset();
+
+});
+
+/* ================= PARTICLES ================= */
 
 const canvas=document.getElementById('heroCanvas');
+
 const ctx=canvas.getContext('2d');
 
 canvas.width=window.innerWidth;
@@ -1283,8 +1450,17 @@ function animateParticles(){
         p.x+=p.dx;
         p.y+=p.dy;
 
-        if(p.x>canvas.width||p.x<0) p.dx*=-1;
-        if(p.y>canvas.height||p.y<0) p.dy*=-1;
+        if(p.x>canvas.width||p.x<0){
+
+            p.dx*=-1;
+
+        }
+
+        if(p.y>canvas.height||p.y<0){
+
+            p.dy*=-1;
+
+        }
 
     });
 
@@ -1304,4 +1480,5 @@ window.addEventListener('resize',()=>{
 </script>
 
 </body>
+
 </html>
